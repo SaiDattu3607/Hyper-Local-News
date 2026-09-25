@@ -1,0 +1,1 @@
+The ingestion service uses Google News RSS for each supported district. Each feed is isolated so one network failure does not stop the remaining districts. `updateOne(..., { upsert: true })` keeps links unique while refreshing existing articles.
