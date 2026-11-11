@@ -1,3 +1,7 @@
 node_modules/
 .env
 npm-debug.log*
+client/dist/
+# The taste skill is restored from skills-lock.json with `npx skills install`.
+.claude/skills/
+.taste-skill/

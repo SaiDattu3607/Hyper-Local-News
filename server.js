@@ -1,6 +1,9 @@
 import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
+import { existsSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import mongoose from 'mongoose';
 import newsRoutes from './src/routes/newsRoutes.js';
 import { startIngestionCron } from './src/services/newsIngestion.js';
@@ -14,6 +17,14 @@ app.use(cors());
 app.use(express.json());
 app.get('/health', (request, response) => response.json({ status: 'ok' }));
 app.use('/api', newsRoutes);
+
+// Serve the built frontend (client/dist) when it exists; unknown non-API routes
+// fall back to index.html so client-side routes work on reload.
+const clientDist = path.join(path.dirname(fileURLToPath(import.meta.url)), 'client', 'dist');
+if (existsSync(clientDist)) {
+  app.use(express.static(clientDist));
+  app.get(/^\/(?!api\/|health$).*/, (request, response) => response.sendFile(path.join(clientDist, 'index.html')));
+}
 app.use(notFoundHandler);
 app.use(errorHandler);
 

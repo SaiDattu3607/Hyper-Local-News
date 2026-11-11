@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyper Local News · Telangana and Andhra Pradesh</title>
+    <meta name="description" content="District-by-district headlines from all 33 districts of Telangana and 26 of Andhra Pradesh, refreshed every 30 minutes." />
+    <meta name="theme-color" content="#f3f0e8" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400..800;1,6..72,400..600&family=Noto+Serif+Telugu:wght@400;600&family=Public+Sans:wght@400;500;600;700&display=swap"
+    />
+    <script>
+      try {
+        var t = localStorage.getItem('hln-theme');
+        if (t === 'night' || t === 'day') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
