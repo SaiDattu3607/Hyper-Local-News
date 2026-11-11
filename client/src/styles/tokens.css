@@ -1,0 +1,71 @@
+/* Design tokens. Day edition = newsprint; night edition = ink-blue paper. */
+:root {
+  --paper: #f3f0e8;
+  --paper-2: #e8e3d6;
+  --ink: #151412;
+  --ink-2: #47423a;
+  --ink-3: #6f685c;
+  --rule: #cfc8b8;
+  --accent: #c8321e;
+  --accent-ink: #ffffff;
+  --mark: #f5d9a8;
+
+  /* District map: five ink densities. */
+  --map-0: #e6e0d2;
+  --map-1: #cdc3b0;
+  --map-2: #a1957f;
+  --map-3: #61584b;
+  --map-4: #1f1c18;
+  --map-text-light: #f3f0e8;
+
+  --serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+  --sans: 'Public Sans', 'Segoe UI', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  --telugu: 'Noto Serif Telugu', 'Nirmala UI', 'Gautami', serif;
+
+  --wrap: 1240px;
+  --gutter: clamp(16px, 3vw, 40px);
+  --gap: 32px;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='day']) {
+    --paper: #11151b;
+    --paper-2: #1a2029;
+    --ink: #ece6d8;
+    --ink-2: #c3bcad;
+    --ink-3: #959083;
+    --rule: #2e3540;
+    --accent: #e85b43;
+    --accent-ink: #11151b;
+    --mark: #5a4320;
+    --map-0: #1d232c;
+    --map-1: #343c48;
+    --map-2: #5a6470;
+    --map-3: #959da6;
+    --map-4: #e6e0d2;
+    --map-text-light: #11151b;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='night'] {
+  --paper: #11151b;
+  --paper-2: #1a2029;
+  --ink: #ece6d8;
+  --ink-2: #c3bcad;
+  --ink-3: #959083;
+  --rule: #2e3540;
+  --accent: #e85b43;
+  --accent-ink: #11151b;
+  --mark: #5a4320;
+  --map-0: #1d232c;
+  --map-1: #343c48;
+  --map-2: #5a6470;
+  --map-3: #959da6;
+  --map-4: #e6e0d2;
+  --map-text-light: #11151b;
+  color-scheme: dark;
+}
